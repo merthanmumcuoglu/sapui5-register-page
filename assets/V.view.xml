@@ -1,0 +1,37 @@
+<mvc:View
+        controllerName="sap.m.sample.InputChecked.C"
+        xmlns="sap.m"
+        xmlns:l="sap.ui.layout"
+        xmlns:mvc="sap.ui.core.mvc">
+    <l:VerticalLayout class="sapUiContentPadding" width="100%">
+
+
+        <Label text="E-mail" labelFor="emailInput"/>
+        <Input
+                id="emailInput"
+                class="sapUiSmallMarginBottom"
+                type="Email"
+                placeholder="Enter email"
+                valueStateText="E-mail must be a valid email address."
+                value="{
+				path: '/email',
+				type: '.customEMailType'
+			}"/>
+        <Label text="Şifre" labelFor="sifre"/>
+        <Input
+                id="sifre"
+                class="sapUiSmallMarginBottom"
+                type="Password"
+                placeholder="Sifre"
+                valueStateText="E-mail must be a valid email address."
+                value="{
+				path: '/sifre',
+				type: '.sifretype',
+				constraints : {
+					minLength: 8,
+					maxLength: 16
+				}
+			}"/>
+        <Button text="Submit" press=".onSubmit"/>
+    </l:VerticalLayout>
+</mvc:View>
